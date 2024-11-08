@@ -23,7 +23,7 @@
 
 html {
   font-family: 'Roboto', sans-serif;
-  font-size: 10px;
+font-size: 62.5%;
   box-sizing: border-box;
   background-color: #090909;
 }
@@ -166,10 +166,18 @@ display: flex;
 
 #logotype h1 {
 color: #f2f2f2;
-font-size: 14rem;
+width: 10rem;
+font-size: calc(10em + 1vw);
 font-weight: 800;
 }
 
+
+@media (max-width: 640px) {
+  html {
+    /* 8px */
+    font-size: 50%;
+  }
+}
  
 #logotype h1 a {
 color: #77B59E; 
@@ -201,6 +209,7 @@ stroke: #77B59E;
         align-items: center; /* Центрируем текст по вертикали */
         justify-content: left; /* Центрируем текст по горизонтали */
         font-size: 5vw; /* Размер шрифта зависит от ширины блока */
+	width: 100%;
     }
 
     /* Второй блок занимает 30% пространства */
