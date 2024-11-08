@@ -21,18 +21,17 @@
   box-sizing: inherit;
 }
 
+::selection {
+    background-color: #233E34;
+  color: #f2f2f2;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
 font-size: 62.5%;
   box-sizing: border-box;
   background-color: #090909;
 }
-
-::selection {
-background-color: #233E34;
-color: #f2f2f2;
-}
-
 
 .container{
   width: 100%;
@@ -67,8 +66,7 @@ h3:hover, .accordion-link li:hover {
 }
 
 .accordion-link i{
-  color: #e7d5ff;
-  padding: .5rem;
+  color: #77B59E;
 }
 
 .accordion-link ul{
@@ -114,7 +112,7 @@ h3:hover, .accordion-link li:hover {
 }
 
 .accordion-item:target .accordion-link .ion-md-arrow-forward{
-  display: none
+  display: none;
 }
 
 .accordion-item:target .accordion-link .ion-md-arrow-down{
@@ -233,8 +231,8 @@ width: 100%;
         width: 100%; /* Ширина svg 100% от родительского блока */
         height: auto; /* Автоматическая высота для сохранения пропорций */
     }
-
-
+ 
+ 
  /* Неактивное состояние */
 i.icon.ion-md-arrow-forward {
   transform: scale(var(--ggs, 1));
@@ -294,7 +292,7 @@ i.icon.ion-md-arrow-down::before {
   top: -6px;
   right: 0;
 }
- 
+
 </style>
 </head>
 <body>
