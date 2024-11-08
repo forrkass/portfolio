@@ -233,6 +233,67 @@ width: 100%;
         width: 100%; /* Ширина svg 100% от родительского блока */
         height: auto; /* Автоматическая высота для сохранения пропорций */
     }
+
+
+ /* Неактивное состояние */
+i.icon.ion-md-arrow-forward {
+  transform: scale(var(--ggs, 1));
+}
+
+i.icon.ion-md-arrow-forward,
+i.icon.ion-md-arrow-forward::after,
+
+i.icon.ion-md-arrow-forward::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 3px;
+  background: currentColor;
+}
+
+i.icon.ion-md-arrow-forward::after,
+
+i.icon.ion-md-arrow-forward::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+}
+
+i.icon.ion-md-arrow-forward::after {
+  top: 6px;
+}
+
+
+/* Активное состояние */
+
+i.icon.ion-md-arrow-down {
+  transform: scale(var(--ggs, 1));
+}
+i.icon.ion-md-arrow-down,
+i.icon.ion-md-arrow-down::after,
+i.icon.ion-md-arrow-down::before {
+  box-sizing: border-box;
+  position: relative;
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 100%;
+}
+i.icon.ion-md-arrow-down::after,
+i.icon.ion-md-arrow-down::before {
+  content: "";
+  position: absolute;
+}
+i.icon.ion-md-arrow-down::after {
+  left: 0;
+  top: 6px;
+}
+i.icon.ion-md-arrow-down::before {
+  top: -6px;
+  right: 0;
+}
  
 </style>
 </head>
