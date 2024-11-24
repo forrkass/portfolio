@@ -1,0 +1,187 @@
+/* CSS аккордеона */
+
+.accordion {
+padding-top: 25px;
+}
+
+.accordion-item {
+  border-radius: 0.4rem;
+}
+
+.accordion-link {
+  font-size: 1.6rem;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.accordion-link h3 {
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.5s;
+  text-transform: uppercase;
+}
+
+.accordion-link i {
+  color: #77B59E;
+}
+
+h3:hover, .accordion-link li:hover {
+  color: #77B59E;
+}
+
+.accordion-link ul{
+  display:flex;
+  align-items: flex-end;
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+@media (max-width:720px){
+	
+.accordion-link ul{
+  display:none;
+}
+}
+
+.accordion-link li {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0 0 1px 5px;
+  transition: 0.5s;
+}
+
+.accordion-link div {
+  display: flex;
+}
+
+.accordion-link .ion-md-arrow-down {
+  display: none;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 800ms;
+}
+
+.answer p{
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 2rem;
+}
+
+.accordion-item:target .answer{
+  max-height: 650px;
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-forward{
+  display: none;
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-down{
+  display: block;
+}
+
+ /* Неактивное состояние */
+ 
+i.icon.ion-md-arrow-forward {
+  transform: scale(var(--ggs, 1));
+}
+
+i.icon.ion-md-arrow-forward, i.icon.ion-md-arrow-forward::after, i.icon.ion-md-arrow-forward::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 3px;
+  background: currentColor;
+}
+
+i.icon.ion-md-arrow-forward::after, i.icon.ion-md-arrow-forward::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+}
+
+i.icon.ion-md-arrow-forward::after {
+  top: 6px;
+}
+
+/* Активное состояние */
+
+i.icon.ion-md-arrow-down {
+  transform: scale(var(--ggs, 1));
+}
+
+i.icon.ion-md-arrow-down, i.icon.ion-md-arrow-down::after, i.icon.ion-md-arrow-down::before {
+  box-sizing: border-box;
+  position: relative;
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 100%;
+}
+
+i.icon.ion-md-arrow-down::after, i.icon.ion-md-arrow-down::before {
+  content: "";
+  position: absolute;
+}
+
+i.icon.ion-md-arrow-down::after {
+  left: 0;
+  top: 6px;
+}
+
+i.icon.ion-md-arrow-down::before {
+  top: -6px;
+  right: 0;
+}
+
+/* CSS горизонтального слайдера */
+
+.gallery {
+  --s: 50px;
+  display: grid;
+  height: 150px;
+  gap: 8px;
+  grid-auto-flow: column;
+  place-items: center;
+}
+
+.gallery img {
+  width: 0;
+  min-width: calc(100% + var(--s));
+  height: 0;
+  min-height: 100%;
+  object-fit: cover;
+  clip-path: polygon(var(--s) 0,100% 0,calc(100% - var(--s)) 100%,0 100%);
+  cursor: pointer;
+  transition: 0.5s;
+  opacity: 0.5;
+}
+
+.gallery img:hover {
+  width: 15vw; 
+  cursor: auto;
+  opacity: 1;
+}
+
+.gallery img:first-child {
+  min-width: calc(100% + var(--s)/2);
+  place-self: start;
+  clip-path: polygon(0 0,100% 0,calc(100% - var(--s)) 100%,0 100%);
+}
+
+.gallery img:last-child {
+  min-width: calc(100% + var(--s)/2);
+  place-self: end;
+  clip-path: polygon(var(--s) 0,100% 0,100% 100%,0 100%);
+}
+
